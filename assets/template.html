@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{설교 제목}} | 용인성광교회</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a2e;
+  --gold: #c9a84c;
+  --gold-light: #f0d98a;
+  --cream: #fdf8ef;
+  --warm-white: #fffdf7;
+  --muted: #6b6560;
+  --rule: #e8dcc8;
+  --accent-blue: #2d4a7a;
+  --accent-green: #2e6b4f;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: var(--cream);
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--ink);
+  line-height: 1.8;
+}
+
+/* ── MASTHEAD ── */
+.masthead {
+  background-color: var(--ink);
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.masthead-left {
+  font-family: 'Nanum Myeongjo', serif;
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.masthead-right { font-size: 12px; color: #888; letter-spacing: 1px; }
+
+/* ── HERO ── */
+.hero {
+  background-color: var(--ink);
+  padding: 60px 40px 50px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 320px; height: 320px;
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: 30%;
+  width: 200px; height: 200px;
+  border: 1px solid rgba(201,168,76,0.08);
+  border-radius: 50%;
+}
+.hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.label {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.4);
+  padding: 4px 12px;
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+.hero h1 em { font-style: normal; color: var(--gold-light); }
+.hero-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+.hero-meta span { font-size: 13px; color: #999; letter-spacing: 0.5px; }
+.hero-meta span strong { color: var(--gold); font-weight: 500; }
+
+/* ── CONTENT / VIDEO ── */
+.content { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+.video-section { margin: 40px auto 0; max-width: 760px; padding: 0 24px; }
+.video-wrap {
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  border-radius: 4px; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  border: 1px solid rgba(201,168,76,0.2);
+}
+.video-wrap iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:none; }
+.video-caption { margin-top: 10px; font-size: 12px; color: var(--muted); text-align: right; letter-spacing: 0.3px; }
+
+/* ── DIVIDER ── */
+.divider { display: flex; align-items: center; gap: 16px; margin: 48px 0 36px; }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+.divider-icon { color: var(--gold); font-size: 16px; }
+
+/* ── INTRO BLOCK ── */
+.intro-block {
+  background: var(--warm-white);
+  border-left: 3px solid var(--gold);
+  padding: 28px 32px;
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 48px;
+}
+.intro-block p { font-family: 'Nanum Myeongjo', serif; font-size: 17px; color: var(--ink); line-height: 2; }
+
+/* ── SECTION HEADING ── */
+.section-label { font-size: 11px; letter-spacing: 3px; color: var(--gold); margin-bottom: 6px; }
+.section-title { font-family: 'Nanum Myeongjo', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 14px; }
+
+/* ── POINT CARDS ── */
+.points { display: flex; flex-direction: column; gap: 32px; margin-bottom: 48px; }
+.point-card { display: grid; grid-template-columns: 56px 1fr; gap: 0 24px; align-items: start; }
+.point-number {
+  font-family: 'Nanum Myeongjo', serif; font-size: 48px; font-weight: 800;
+  color: var(--rule); line-height: 1; padding-top: 4px; user-select: none;
+}
+.point-tag {
+  display: inline-block; font-size: 11px; letter-spacing: 2px;
+  color: var(--accent-blue); background: #eef2f9;
+  padding: 3px 10px; border-radius: 2px; margin-bottom: 8px;
+}
+.point-heading { font-family: 'Nanum Myeongjo', serif; font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--ink); }
+.point-text { font-size: 14.5px; color: #4a4540; line-height: 1.9; }
+.point-text strong { color: var(--ink); font-weight: 700; }
+
+/* ── SCRIPTURE PULL ── */
+.scripture {
+  background: var(--ink); color: #fff;
+  padding: 40px; border-radius: 4px; margin-bottom: 48px;
+  position: relative; overflow: hidden;
+}
+.scripture::before {
+  content: '"'; position: absolute; top: -10px; left: 20px;
+  font-family: 'Nanum Myeongjo', serif; font-size: 160px;
+  color: rgba(201,168,76,0.08); line-height: 1; pointer-events: none;
+}
+.scripture blockquote {
+  font-family: 'Nanum Myeongjo', serif; font-size: 19px;
+  line-height: 1.9; color: #f0e8d5; font-style: normal; position: relative;
+}
+.scripture cite { display: block; margin-top: 16px; font-size: 12px; letter-spacing: 2px; color: var(--gold); font-style: normal; }
+
+/* ── THREE-PANEL CARDS ── */
+.channel-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+.channel-card {
+  background: var(--warm-white); border: 1px solid var(--rule);
+  border-top: 3px solid var(--gold); padding: 24px 20px; border-radius: 0 0 4px 4px;
+}
+.channel-card .ch-num { font-family: 'Nanum Myeongjo', serif; font-size: 13px; color: var(--gold); letter-spacing: 1px; margin-bottom: 8px; }
+.channel-card .ch-title { font-family: 'Nanum Myeongjo', serif; font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.channel-card .ch-body { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+
+/* ── SCRIPTURE GRID ── */
+.scripture-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 48px; }
+.sc-card {
+  background: var(--warm-white); border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold); padding: 20px 22px; border-radius: 0 4px 4px 0;
+}
+.sc-card.main-text { grid-column: 1 / -1; border-left-color: var(--accent-blue); background: #eef2f9; }
+.sc-ref { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 2px; margin-bottom: 8px; }
+.sc-card.main-text .sc-ref { color: var(--accent-blue); }
+.sc-text { font-family: 'Nanum Myeongjo', serif; font-size: 14.5px; line-height: 1.9; color: var(--ink); font-style: italic; margin-bottom: 10px; }
+.sc-tag {
+  display: inline-block; font-size: 11px; letter-spacing: 1.5px;
+  color: var(--accent-blue); background: #eef2f9;
+  padding: 2px 9px; border-radius: 2px; font-style: normal; font-family: 'Noto Sans KR', sans-serif;
+}
+.sc-card.main-text .sc-tag { background: var(--warm-white); }
+
+/* ── CONCLUSION ── */
+.conclusion {
+  background: linear-gradient(135deg, #1e3a2f 0%, #2e6b4f 100%);
+  color: #fff; padding: 40px; border-radius: 4px; margin-bottom: 60px;
+}
+.conclusion .con-label { font-size: 11px; letter-spacing: 3px; color: #7ecfa3; margin-bottom: 12px; }
+.conclusion h3 { font-family: 'Nanum Myeongjo', serif; font-size: 22px; margin-bottom: 16px; color: #e8f5ee; }
+.conclusion p { font-size: 14.5px; color: #c8ead8; line-height: 1.9; }
+.conclusion p strong { color: #fff; }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); padding: 32px 40px; text-align: center; }
+footer p { font-size: 12px; color: #555; letter-spacing: 0.5px; line-height: 2; }
+footer p a { color: var(--gold); text-decoration: none; }
+
+@media (max-width: 600px) {
+  .hero { padding: 40px 20px 36px; }
+  .content, .video-section { padding: 0 16px; }
+  .channel-cards, .scripture-grid { grid-template-columns: 1fr; }
+  .sc-card.main-text { grid-column: 1; }
+  .point-card { grid-template-columns: 1fr; }
+  .point-number { font-size: 32px; }
+  .masthead { padding: 14px 20px; }
+  .scripture, .conclusion { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 상단 마스트헤드 -->
+<div class="masthead">
+  <div class="masthead-left">용인성광교회 · 주일설교</div>
+  <div class="masthead-right">{{YYYY.MM.DD.}}</div>
+</div>
+
+<!-- 히어로 -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="label">주일 2부 설교 요약</div>
+    <h1>{{제목 1행}}<br><em>{{제목 2행(강조)}}</em></h1>
+    <div class="hero-meta">
+      <span><strong>본문</strong> {{성경 본문, 예: 로마서 3:23–26}}</span>
+    </div>
+  </div>
+</div>
+
+<!-- 영상 -->
+<div class="video-section">
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/{{YOUTUBE_VIDEO_ID}}"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  <p class="video-caption">▲ 설교 전체 영상 · YouTube</p>
+</div>
+
+<!-- 본문 콘텐츠 -->
+<div class="content">
+  <div class="divider"><span class="divider-icon">✦</span></div>
+
+  <!-- 서론: 핵심 요약 3~5줄 -->
+  <div class="intro-block">
+    <p>{{핵심 요약 3~5줄}}</p>
+  </div>
+
+  <!-- 핵심 포인트 (대지 3개) -->
+  <div class="section-label">MAIN POINTS</div>
+  <div class="section-title">{{본문}}의 세 가지 메시지</div>
+
+  <div class="points">
+    <div class="point-card">
+      <div class="point-number">01</div>
+      <div class="point-body">
+        <span class="point-tag">{{태그 2단어}}</span>
+        <div class="point-heading">{{대지 1 제목}}</div>
+        <p class="point-text">{{대지 1 설명 3~4문장. <strong>핵심 문구는 강조</strong>.}}</p>
+      </div>
+    </div>
+
+    <div class="point-card">
+      <div class="point-number">02</div>
+      <div class="point-body">
+        <span class="point-tag">{{태그 2단어}}</span>
+        <div class="point-heading">{{대지 2 제목}}</div>
+        <p class="point-text">{{대지 2 설명 3~4문장}}</p>
+      </div>
+    </div>
+
+    <div class="point-card">
+      <div class="point-number">03</div>
+      <div class="point-body">
+        <span class="point-tag">{{태그 2단어}}</span>
+        <div class="point-heading">{{대지 3 제목}}</div>
+        <p class="point-text">{{대지 3 설명 3~4문장}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 핵심 성경구절 (설교 전체를 대표하는 한 구절) -->
+  <div class="scripture">
+    <blockquote>
+      "{{핵심 구절 개역개정 본문}}"
+      <cite>— {{구절 출처}} (개역개정)</cite>
+    </blockquote>
+  </div>
+
+  <!-- 3단 카드: 핵심 메시지를 풀어주는 실천/관찰 포인트 -->
+  <div class="section-label">{{영문 섹션 라벨}}</div>
+  <div class="section-title">{{섹션 제목}}</div>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:24px;">
+    {{보조 설명 한 줄}}
+  </p>
+
+  <div class="channel-cards">
+    <div class="channel-card">
+      <div class="ch-num">단계 01</div>
+      <div class="ch-title">{{카드 1 제목}}</div>
+      <div class="ch-body">{{카드 1 설명}}</div>
+    </div>
+    <div class="channel-card">
+      <div class="ch-num">단계 02</div>
+      <div class="ch-title">{{카드 2 제목}}</div>
+      <div class="ch-body">{{카드 2 설명}}</div>
+    </div>
+    <div class="channel-card">
+      <div class="ch-num">단계 03</div>
+      <div class="ch-title">{{카드 3 제목}}</div>
+      <div class="ch-body">{{카드 3 설명}}</div>
+    </div>
+  </div>
+
+  <!-- 인용 성경 구절: 본문 1개(main-text) + 나머지 6~8개, 개역개정 -->
+  <div class="section-label">SCRIPTURE REFERENCES</div>
+  <div class="section-title">설교에서 인용된 성경 구절</div>
+
+  <div class="scripture-grid">
+
+    <div class="sc-card main-text">
+      <div class="sc-ref">{{설교 본문 구절}} · 설교 본문</div>
+      <p class="sc-text">{{설교 본문 개역개정 전체}}</p>
+      <span class="sc-tag">본문</span>
+    </div>
+
+    <div class="sc-card">
+      <div class="sc-ref">{{구절 출처}}</div>
+      <p class="sc-text">{{개역개정 본문}}</p>
+      <span class="sc-tag">{{한줄 설명}}</span>
+    </div>
+
+    <!-- 위 sc-card를 6~8개 반복 (2열 그리드) -->
+
+  </div>
+
+  <!-- 결론 -->
+  <div class="conclusion">
+    <div class="con-label">CONCLUSION</div>
+    <h3>{{결론 제목}}</h3>
+    <p>{{결론 본문. <strong>강조 문구</strong> 포함 가능.}}</p>
+  </div>
+</div>
+
+<footer>
+  <p>용인성광교회 주일설교 노트 · <a href="https://youtu.be/{{YOUTUBE_VIDEO_ID}}" target="_blank">YouTube 원본 영상 보기 ↗</a></p>
+  <p>본 콘텐츠는 설교 스크립트를 바탕으로 요약·편집되었습니다.</p>
+</footer>
+
+</body>
+</html>
